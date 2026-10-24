@@ -19,7 +19,7 @@ PWA_HEAD = """<meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#2b55c9">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Subjonctif">
+<meta name="apple-mobile-web-app-title" content="Французский">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -64,7 +64,7 @@ WRAPPER = """<!doctype html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Subjonctif — практикум</title>
+<title>Французский практикум</title>
 __PWA__
 <style>
 :root { --bg:#f6f4ef; --surface:#fff; --text:#1d1b18; --muted:#6a655c; --line:#e3ded3; --accent:#2b55c9; --bad:#bf3a2f; color-scheme: light; }
@@ -74,7 +74,7 @@ body { margin: 0; min-height: 100vh; display: grid; place-items: center; backgro
   font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; padding: 16px; }
 .box { width: 100%; max-width: 380px; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px 24px; box-shadow: 0 6px 24px rgba(0,0,0,.07); }
 .logo { width: 64px; height: 64px; border-radius: 16px; display: block; margin: 0 0 14px; }
-h1 { font: italic 600 28px Georgia, "Times New Roman", serif; margin: 0 0 4px; }
+h1 { font: 600 26px Georgia, "Times New Roman", serif; margin: 0 0 4px; }
 p { margin: 0 0 18px; color: var(--muted); }
 input[type=password] { width: 100%; font-size: 18px; padding: 12px 14px; border-radius: 11px; border: 1.5px solid var(--line); background: var(--bg); color: var(--text); outline: none; }
 input[type=password]:focus { border-color: var(--accent); }
@@ -88,8 +88,8 @@ button:disabled { opacity: .6; }
 <body>
 <form class="box" id="f" autocomplete="on">
   <img class="logo" src="icon-192.png" alt="">
-  <h1>Subjonctif</h1>
-  <p>Практикум по сослагательному наклонению. Введите пароль.</p>
+  <h1>Французский практикум</h1>
+  <p>Введите пароль.</p>
   <input type="text" name="username" value="subjonctif" autocomplete="username" hidden>
   <input type="password" id="pw" autocomplete="current-password" placeholder="Пароль" required>
   <label><input type="checkbox" id="rem" checked> Запомнить на этом устройстве</label>
@@ -150,7 +150,7 @@ page = WRAPPER.replace("__PWA__", PWA_HEAD).replace("__PAYLOAD__", json.dumps(pa
 open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(page)
 
 manifest = {
-    "name": "Subjonctif — практикум", "short_name": "Subjonctif", "lang": "ru",
+    "name": "Французский практикум", "short_name": "Французский", "lang": "ru",
     "start_url": "./", "scope": "./", "display": "standalone",
     "background_color": "#f6f4ef", "theme_color": "#2b55c9",
     "icons": [{"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
